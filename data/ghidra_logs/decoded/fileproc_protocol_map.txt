@@ -1,0 +1,139 @@
+﻿INFO  Using log config file: jar:file:/C:/ghidra-src/build/dist/ghidra_12.2_DEV_20260327_win_x86_64/ghidra_12.2_DEV/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: C:\Users\user\AppData\Roaming\ghidra\ghidra_12.2_DEV\application.log (LoggingInitialization)  
+INFO  Loading user preferences: C:\Users\user\AppData\Roaming\ghidra\ghidra_12.2_DEV\preferences (Preferences)  
+INFO  Searching for classes... (ClassSearcher)  
+INFO  Class search complete (2947 ms) (ClassSearcher)  
+INFO  Initializing SSL Context (DefaultSSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: SHA1PRNG (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (DefaultTrustManagerFactory)  
+INFO  Headless startup complete (8639 ms) (AnalyzeHeadless)  
+INFO  Class searcher loaded 59 extension points (20 false positives) (ClassSearcher)  
+INFO  HEADLESS Script Paths:
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Debug\Debugger\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\BytePatterns\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Processors\Atmel\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\BSim\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\Jython\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Processors\DATA\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Processors\8051\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\GnuDemangler\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\MicrosoftCodeAnalyzer\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\DecompilerDependent\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Processors\PIC\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Processors\JVM\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\FileFormats\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\PyGhidra\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\SystemEmulation\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\VersionTracking\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\Decompiler\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\SwiftDemangler\ghidra_scripts
+    C:\ghidra-work\scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\Base\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Debug\Debugger-rmi-trace\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\WildcardAssembler\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\FunctionID\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\PDB\ghidra_scripts (HeadlessAnalyzer)  
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
+INFO  Opening existing project: C:\ghidra-work\windcon_proj (HeadlessAnalyzer)  
+INFO  Opening project: C:\ghidra-work\windcon_proj (HeadlessProject)  
+INFO  REPORT: Processing project file: /fileProc.dll (HeadlessAnalyzer)  
+INFO  ANALYZING all memory and code: /fileProc.dll (HeadlessAnalyzer)  
+WARN  Ignoring leading '_' chars on no-return name '___raise_securityfailure' specified in file: C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\Base\data\PEFunctionsThatDoNotReturn (NoReturnFunctionAnalyzer)  
+WARN  Ignoring leading '_' chars on no-return name '___report_rangecheckfailure' specified in file: C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\Base\data\PEFunctionsThatDoNotReturn (NoReturnFunctionAnalyzer)  
+INFO  Skipping PDB processing: missing PDB information in program metadata (PdbUniversalAnalyzer)  
+INFO  Packed database cache: C:\Users\user\AppData\Local\ghidra\packed-db-cache (PackedDatabaseCache)  
+INFO  Applied data type archive: windows_vs12_32 (ApplyDataArchiveAnalyzer)  
+ERROR os/win_x86_64/decompile.exe does not exist (see GettingStarted.md, 'Building Native Components') (DecompileProcessFactory)  
+INFO  -----------------------------------------------------
+    ASCII Strings                              2.418 secs
+    Apply Data Archives                        2.186 secs
+    Call Convention ID                         0.017 secs
+    Call-Fixup Installer                       0.003 secs
+    Create Address Tables                      0.075 secs
+    Create Function                            0.000 secs
+    Data Reference                             0.077 secs
+    Decompiler Parameter ID                    0.166 secs
+    Decompiler Switch Analysis                 0.058 secs
+    Demangler GNU                              2.465 secs
+    Demangler Microsoft                        0.032 secs
+    Disassemble Entry Points                   0.105 secs
+    Embedded Media                             0.031 secs
+    External Entry References                  0.001 secs
+    Function ID                                0.656 secs
+    Function Start Pre Search                  0.061 secs
+    Function Start Search                      0.066 secs
+    Function Start Search After Code           0.004 secs
+    Function Start Search After Data           0.004 secs
+    MinGW Relocations                          0.000 secs
+    Non-Returning Functions - Discovered       0.160 secs
+    Non-Returning Functions - Known            0.062 secs
+    PDB Universal                              0.006 secs
+    Reference                                  0.221 secs
+    Scalar Operand References                  1.808 secs
+    Shared Return Calls                        0.094 secs
+    Stack                                      0.096 secs
+    Subroutine References                      0.128 secs
+    WindowsResourceReference                   0.578 secs
+    X86 Function Callee Purge                  0.018 secs
+    x86 Constant Reference Analyzer            1.795 secs
+-----------------------------------------------------
+     Total Time   13 secs
+-----------------------------------------------------
+ (AutoAnalysisManager)  
+INFO  REPORT: Analysis succeeded for file: /fileProc.dll (HeadlessAnalyzer)  
+INFO  REPORT: Execute script: WindconProtocolMap.java  (HeadlessAnalyzer)  
+INFO  SCRIPT: C:\ghidra-work\scripts\WindconProtocolMap.java (HeadlessAnalyzer)  
+INFO  WindconProtocolMap.java> === WINDCON PROTOCOL MAP START === (GhidraScript)  
+INFO  WindconProtocolMap.java> Program: fileProc.dll (GhidraScript)  
+INFO  WindconProtocolMap.java> -- External Symbols (protocol-relevant) -- (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN4QDir11currentPathEv (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN8QProcess21readAllStandardOutputEv (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN9QDateTime15currentDateTimeEv (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] __deregister_frame_info (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] __register_frame_info (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] GetCurrentProcess (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] GetCurrentProcessId (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] GetCurrentThreadId (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] fwrite (GhidraScript)  
+INFO  WindconProtocolMap.java> External keyword symbols: 9 (GhidraScript)  
+INFO  WindconProtocolMap.java> -- Keyword Strings -- (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 639cd013 :: __register_frame_info (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 639cd029 :: __deregister_frame_info (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 639cd2a8 :: wmic baseboard get serialnumber (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 639cd2c8 :: wmic diskdrive where index=0 get serialnumber (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 639cd2f6 :: wmic bios get serialnumber (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 639cd396 :: 
+please add authorize file via Serial Number (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 639cd428 :: .
+authorize file does not match this computer (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 639cd49d :: Serial Number (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 639cd56d :: setSerialNum (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 639d1186 :: _ZN8FileProc12getSerialNumEv (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 639d11c2 :: _ZN8FileProc17checkTempAutFileXEPi (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 639d282e :: _ZN4QDir11currentPathEv (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 639d2c06 :: _ZN8QProcess21readAllStandardOutputEv (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 639d2ca2 :: _ZN9QDateTime15currentDateTimeEv (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 639d3a66 :: __deregister_frame_info (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 639d3a82 :: __register_frame_info (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 639d3ad8 :: GetCurrentProcess (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 639d3aec :: GetCurrentProcessId (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 639d3b02 :: GetCurrentThreadId (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 639d3caa :: fwrite (GhidraScript)  
+INFO  WindconProtocolMap.java> Scanned string items: 251, matched keyword strings: 20 (GhidraScript)  
+INFO  WindconProtocolMap.java> -- Register Constant References -- (GhidraScript)  
+INFO  WindconProtocolMap.java> [reg ] 0x1000 @ 639ca87a in FUN_639ca878 :: CMP EAX,0x1000 (GhidraScript)  
+INFO  WindconProtocolMap.java> [reg ] 0x1000 @ 639ca885 in FUN_639ca878 :: SUB ECX,0x1000 (GhidraScript)  
+INFO  WindconProtocolMap.java> [reg ] 0x1000 @ 639ca88e in FUN_639ca878 :: SUB EAX,0x1000 (GhidraScript)  
+INFO  WindconProtocolMap.java> [reg ] 0x1000 @ 639ca893 in FUN_639ca878 :: CMP EAX,0x1000 (GhidraScript)  
+INFO  WindconProtocolMap.java> Unique register constant hits: 4 (GhidraScript)  
+INFO  WindconProtocolMap.java> -- Function Summary -- (GhidraScript)  
+INFO  WindconProtocolMap.java> [func] _ZN8FileProc12getSerialNumEv @ 639c5e60 (GhidraScript)  
+INFO  WindconProtocolMap.java> [func] _ZN8FileProc17checkTempAutFileXEPi @ 639c62d0 (GhidraScript)  
+INFO  WindconProtocolMap.java> [func] __register_frame_info @ 639ca860 (GhidraScript)  
+INFO  WindconProtocolMap.java> [func] fwrite @ 639ca910 (GhidraScript)  
+INFO  WindconProtocolMap.java> Total functions: 81, keyword-named functions: 4 (GhidraScript)  
+INFO  WindconProtocolMap.java> === WINDCON PROTOCOL MAP END === (GhidraScript)  
+INFO  ANALYZING changes made by post scripts: /fileProc.dll (HeadlessAnalyzer)  
+INFO  REPORT: Post-analysis succeeded for file: /fileProc.dll (HeadlessAnalyzer)  
+INFO  REPORT: Save succeeded for processed file: /fileProc.dll (HeadlessAnalyzer)  

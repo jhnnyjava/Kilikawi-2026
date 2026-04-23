@@ -1,0 +1,8 @@
+[console_scripts]
+uart-decode-log = uart_simulator.tools.decode_receive_log:main
+uart-emulator = uart_simulator.emulator.server:main
+uart-encoding-ref = uart_simulator.tools.encoding_reference:main
+uart-sim-gui = uart_simulator.gui.app:main
+uart-sniffer = uart_simulator.tools.sniffer:main
+uart-virtual-lab = uart_simulator.tools.virtual_lab:main
+uart-vterm = uart_simulator.tools.virtual_terminal:main

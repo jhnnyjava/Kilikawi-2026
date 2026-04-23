@@ -1,0 +1,5 @@
+pyserial>=3.5
+pillow>=10.0
+
+[dev]
+pytest>=8.0

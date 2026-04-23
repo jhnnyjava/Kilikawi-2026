@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "uart-simulator"
+version = "0.1.0"
+description = "RS485/UART protocol tooling and motor/controller emulator scaffold"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "pyserial>=3.5",
+  "pillow>=10.0"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0"
+]
+
+[project.scripts]
+uart-emulator = "uart_simulator.emulator.server:main"
+uart-sniffer = "uart_simulator.tools.sniffer:main"
+uart-sim-gui = "uart_simulator.gui.app:main"
+uart-virtual-lab = "uart_simulator.tools.virtual_lab:main"
+uart-encoding-ref = "uart_simulator.tools.encoding_reference:main"
+uart-decode-log = "uart_simulator.tools.decode_receive_log:main"
+uart-vterm = "uart_simulator.tools.virtual_terminal:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

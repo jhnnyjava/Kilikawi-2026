@@ -1,0 +1,201 @@
+﻿INFO  Using log config file: jar:file:/C:/ghidra-src/build/dist/ghidra_12.2_DEV_20260327_win_x86_64/ghidra_12.2_DEV/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: C:\Users\user\AppData\Roaming\ghidra\ghidra_12.2_DEV\application.log (LoggingInitialization)  
+INFO  Loading user preferences: C:\Users\user\AppData\Roaming\ghidra\ghidra_12.2_DEV\preferences (Preferences)  
+INFO  Searching for classes... (ClassSearcher)  
+INFO  Class search complete (3755 ms) (ClassSearcher)  
+INFO  Initializing SSL Context (DefaultSSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: SHA1PRNG (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (DefaultTrustManagerFactory)  
+INFO  Headless startup complete (12060 ms) (AnalyzeHeadless)  
+INFO  Class searcher loaded 59 extension points (20 false positives) (ClassSearcher)  
+INFO  HEADLESS Script Paths:
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Debug\Debugger\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\BytePatterns\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Processors\Atmel\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\BSim\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\Jython\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Processors\DATA\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Processors\8051\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\GnuDemangler\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\MicrosoftCodeAnalyzer\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\DecompilerDependent\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Processors\PIC\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Processors\JVM\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\FileFormats\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\PyGhidra\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\SystemEmulation\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\VersionTracking\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\Decompiler\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\SwiftDemangler\ghidra_scripts
+    C:\ghidra-work\scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\Base\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Debug\Debugger-rmi-trace\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\WildcardAssembler\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\FunctionID\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\PDB\ghidra_scripts (HeadlessAnalyzer)  
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
+INFO  Opening existing project: C:\ghidra-work\windcon_proj (HeadlessAnalyzer)  
+INFO  Opening project: C:\ghidra-work\windcon_proj (HeadlessProject)  
+INFO  REPORT: Processing project file: /ControlCAN.dll (HeadlessAnalyzer)  
+INFO  ANALYZING all memory and code: /ControlCAN.dll (HeadlessAnalyzer)  
+WARN  Ignoring leading '_' chars on no-return name '___raise_securityfailure' specified in file: C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\Base\data\PEFunctionsThatDoNotReturn (NoReturnFunctionAnalyzer)  
+WARN  Ignoring leading '_' chars on no-return name '___report_rangecheckfailure' specified in file: C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\Base\data\PEFunctionsThatDoNotReturn (NoReturnFunctionAnalyzer)  
+INFO  Skipping PDB processing: missing PDB information in program metadata (PdbUniversalAnalyzer)  
+ERROR os/win_x86_64/decompile.exe does not exist (see GettingStarted.md, 'Building Native Components') (DecompileProcessFactory)  
+INFO  Packed database cache: C:\Users\user\AppData\Local\ghidra\packed-db-cache (PackedDatabaseCache)  
+INFO  Applied data type archive: windows_vs12_32 (ApplyDataArchiveAnalyzer)  
+INFO  -----------------------------------------------------
+    ASCII Strings                              1.934 secs
+    Apply Data Archives                        3.444 secs
+    Call Convention ID                         0.035 secs
+    Call-Fixup Installer                       0.019 secs
+    Create Address Tables                      1.111 secs
+    Create Function                            0.049 secs
+    Data Reference                             0.282 secs
+    Decompiler Parameter ID                    0.923 secs
+    Decompiler Switch Analysis                 0.927 secs
+    Demangler Microsoft                        0.350 secs
+    Disassemble Entry Points                   0.392 secs
+    Embedded Media                             0.064 secs
+    External Entry References                  0.001 secs
+    Function ID                                3.435 secs
+    Function Start Pre Search                  0.085 secs
+    Function Start Search                      0.236 secs
+    Function Start Search After Code           0.111 secs
+    Function Start Search After Data           0.204 secs
+    Non-Returning Functions - Discovered       0.727 secs
+    Non-Returning Functions - Known            0.142 secs
+    PDB Universal                              0.009 secs
+    Reference                                  0.612 secs
+    Scalar Operand References                  1.221 secs
+    Shared Return Calls                        0.343 secs
+    Stack                                      3.753 secs
+    Subroutine References                      0.551 secs
+    Windows x86 PE Exception Handling          0.437 secs
+    Windows x86 PE RTTI Analyzer               0.001 secs
+    Windows x86 Thread Environment Block (TEB) Analyzer     0.000 secs
+    WindowsResourceReference                   1.415 secs
+    X86 Function Callee Purge                  0.030 secs
+    x86 Constant Reference Analyzer            3.695 secs
+-----------------------------------------------------
+     Total Time   26 secs
+-----------------------------------------------------
+ (AutoAnalysisManager)  
+INFO  REPORT: Analysis succeeded for file: /ControlCAN.dll (HeadlessAnalyzer)  
+INFO  REPORT: Execute script: WindconProtocolMap.java  (HeadlessAnalyzer)  
+INFO  SCRIPT: C:\ghidra-work\scripts\WindconProtocolMap.java (HeadlessAnalyzer)  
+INFO  WindconProtocolMap.java> === WINDCON PROTOCOL MAP START === (GhidraScript)  
+INFO  WindconProtocolMap.java> Program: ControlCAN.dll (GhidraScript)  
+INFO  WindconProtocolMap.java> -- External Symbols (protocol-relevant) -- (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] GetCommandLineA (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] IsBadWritePtr (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] IsBadReadPtr (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] WriteFile (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] GetCurrentProcess (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] GetCurrentThreadId (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] CreateThread (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] InitCommonControls (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] CH375AbortRead (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] CH375AbortWrite (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] CH375WriteData (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] CH375ReadInter (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] CH375ReadData (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] SystemParametersInfoA (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] SendMessageA (GhidraScript)  
+INFO  WindconProtocolMap.java> External keyword symbols: 15 (GhidraScript)  
+INFO  WindconProtocolMap.java> -- Keyword Strings -- (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 1000e4a8 :: CTempWnd (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 1000e7b4 :: AfxMDIFrame42s (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 1000e7c4 :: AfxFrameOrView42s (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 1000e86c :: commctrl_DragListMsg (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 1000e958 :: InitCommonControlsEx (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 1000e970 :: COMCTL32.DLL (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 1000eb50 :: combobox (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 1000eb80 :: CTempMenu (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 1000ebf8 :: CTempGdiObject (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 1000ec20 :: CTempDC (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 1000f15c :: R6017
+- unexpected multithread lock error
+ (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 1000f18c :: R6016
+- not enough space for thread data
+ (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 1001081e :: CreateThread (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 1001084a :: COMCTL32.dll (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 1001085a :: CH375ReadInter (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 1001086c :: CH375WriteData (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 1001087e :: CH375ReadData (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 10010930 :: CH375AbortRead (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 10010942 :: CH375AbortWrite (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 100109b2 :: GetCurrentThreadId (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 10010c3e :: GetCurrentProcess (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 10010c52 :: WriteFile (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 10010c6a :: GetCommandLineA (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 10010e0c :: IsBadWritePtr (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 10010e40 :: IsBadReadPtr (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 10010ea4 :: SendMessageA (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 10010ff4 :: SystemParametersInfoA (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 10011536 :: comdlg32.dll (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 1001161e :: ControlCan.dll (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 1001162d :: ?canIoctl@@YGKPAXKK0@Z (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 10011687 :: VCI_InitCAN (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 100116a2 :: VCI_ReadBoardInfo (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 100116b4 :: VCI_ReadCANStatus (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 100116c6 :: VCI_ReadErrInfo (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 100116e2 :: VCI_ResetCAN (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 10011700 :: VCI_StartCAN (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 10012180 :: .?AV_AFX_CTL3D_THREAD@@ (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 100121a0 :: .?AUCThreadData@@ (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 100121e0 :: .?AV_AFX_THREAD_STATE@@ (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 10012220 :: .?AVAFX_MODULE_THREAD_STATE@@ (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 100122d0 :: .?AVCTempWnd@@ (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 10012430 :: .?AVCTempMenu@@ (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 10012480 :: .?AVCTempDC@@ (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 10012498 :: .?AVCTempGdiObject@@ (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 1003f0fe :: Comments (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 1003f110 :: GCTech USBCAN VCI DLL (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 1003f142 :: CompanyName (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 1003f1d0 :: ControlCan (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 1003f240 :: ControlCan (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 1003f344 :: ControlCan.dll (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 1003f3cc :: GCTech ECanVci For USBCAN DLL (GhidraScript)  
+INFO  WindconProtocolMap.java> Scanned string items: 365, matched keyword strings: 51 (GhidraScript)  
+INFO  WindconProtocolMap.java> -- Register Constant References -- (GhidraScript)  
+INFO  WindconProtocolMap.java> [reg ] 0x101C @ 100012fe in FUN_100012f0 :: MOV EAX,0x101c (GhidraScript)  
+INFO  WindconProtocolMap.java> [reg ] 0x1000 @ 10001314 in FUN_100012f0 :: MOV dword ptr [ESP + 0x14],0x1000 (GhidraScript)  
+INFO  WindconProtocolMap.java> [reg ] 0x101C @ 10001360 in FUN_100012f0 :: MOV ECX,dword ptr [ESP + 0x101c] (GhidraScript)  
+INFO  WindconProtocolMap.java> [reg ] 0x101C @ 1000160f in FUN_100012f0 :: MOV ECX,dword ptr [ESP + 0x101c] (GhidraScript)  
+INFO  WindconProtocolMap.java> [reg ] 0x100A @ 100019ea in FUN_10001630 :: CMP ESI,0x4000100a (GhidraScript)  
+INFO  WindconProtocolMap.java> [reg ] 0x1009 @ 100019fa in FUN_10001630 :: CMP ESI,0x40001009 (GhidraScript)  
+INFO  WindconProtocolMap.java> [reg ] 0x100A @ 10001b78 in FUN_10001630 :: CMP EAX,0x4000100a (GhidraScript)  
+INFO  WindconProtocolMap.java> [reg ] 0x1009 @ 10001b87 in FUN_10001630 :: CMP EAX,0x40001009 (GhidraScript)  
+INFO  WindconProtocolMap.java> [reg ] 0x1000 @ 10003d01 in FUN_10003d00 :: CMP EAX,0x1000 (GhidraScript)  
+INFO  WindconProtocolMap.java> [reg ] 0x1000 @ 10003d0c in FUN_10003d00 :: SUB ECX,0x1000 (GhidraScript)  
+INFO  WindconProtocolMap.java> [reg ] 0x1000 @ 10003d12 in FUN_10003d00 :: SUB EAX,0x1000 (GhidraScript)  
+INFO  WindconProtocolMap.java> [reg ] 0x1000 @ 10003d19 in FUN_10003d00 :: CMP EAX,0x1000 (GhidraScript)  
+INFO  WindconProtocolMap.java> [reg ] 0x1000 @ 100062cf in FUN_100062c7 :: PUSH 0x1000 (GhidraScript)  
+INFO  WindconProtocolMap.java> [reg ] 0x1000 @ 100073a7 in FUN_10007361 :: PUSH 0x1000 (GhidraScript)  
+INFO  WindconProtocolMap.java> [reg ] 0x1000 @ 100073fe in FUN_10007361 :: ADD EAX,0x1000 (GhidraScript)  
+INFO  WindconProtocolMap.java> [reg ] 0x1000 @ 1000b6e3 in FUN_1000b504 :: MOV EAX,0x1000 (GhidraScript)  
+INFO  WindconProtocolMap.java> Unique register constant hits: 16 (GhidraScript)  
+INFO  WindconProtocolMap.java> -- Function Summary -- (GhidraScript)  
+INFO  WindconProtocolMap.java> [func] canIoctl @ 10001d10 (GhidraScript)  
+INFO  WindconProtocolMap.java> [func] VCI_ReadBoardInfo @ 10002080 (GhidraScript)  
+INFO  WindconProtocolMap.java> [func] VCI_InitCAN @ 10002b70 (GhidraScript)  
+INFO  WindconProtocolMap.java> [func] VCI_StartCAN @ 10002ec0 (GhidraScript)  
+INFO  WindconProtocolMap.java> [func] VCI_ResetCAN @ 10003040 (GhidraScript)  
+INFO  WindconProtocolMap.java> [func] VCI_ReadCANStatus @ 10003140 (GhidraScript)  
+INFO  WindconProtocolMap.java> [func] VCI_ReadErrInfo @ 10003150 (GhidraScript)  
+INFO  WindconProtocolMap.java> [func] __CallSettingFrame@12 @ 100059f0 (GhidraScript)  
+INFO  WindconProtocolMap.java> [func] CH375ReadInter @ 10008216 (GhidraScript)  
+INFO  WindconProtocolMap.java> [func] CH375WriteData @ 1000821c (GhidraScript)  
+INFO  WindconProtocolMap.java> [func] CH375ReadData @ 10008222 (GhidraScript)  
+INFO  WindconProtocolMap.java> [func] CH375AbortRead @ 10008258 (GhidraScript)  
+INFO  WindconProtocolMap.java> [func] CH375AbortWrite @ 1000825e (GhidraScript)  
+INFO  WindconProtocolMap.java> [func] AfxGetThread @ 1000896e (GhidraScript)  
+INFO  WindconProtocolMap.java> Total functions: 533, keyword-named functions: 14 (GhidraScript)  
+INFO  WindconProtocolMap.java> === WINDCON PROTOCOL MAP END === (GhidraScript)  
+INFO  ANALYZING changes made by post scripts: /ControlCAN.dll (HeadlessAnalyzer)  
+INFO  REPORT: Post-analysis succeeded for file: /ControlCAN.dll (HeadlessAnalyzer)  
+INFO  REPORT: Save succeeded for processed file: /ControlCAN.dll (HeadlessAnalyzer)  

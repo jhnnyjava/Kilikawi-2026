@@ -1,0 +1,593 @@
+﻿INFO  Using log config file: jar:file:/C:/ghidra-src/build/dist/ghidra_12.2_DEV_20260327_win_x86_64/ghidra_12.2_DEV/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: C:\Users\user\AppData\Roaming\ghidra\ghidra_12.2_DEV\application.log (LoggingInitialization)  
+INFO  Loading user preferences: C:\Users\user\AppData\Roaming\ghidra\ghidra_12.2_DEV\preferences (Preferences)  
+INFO  Searching for classes... (ClassSearcher)  
+INFO  Class search complete (8504 ms) (ClassSearcher)  
+INFO  Initializing SSL Context (DefaultSSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: SHA1PRNG (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (DefaultTrustManagerFactory)  
+INFO  Headless startup complete (42002 ms) (AnalyzeHeadless)  
+INFO  Class searcher loaded 59 extension points (20 false positives) (ClassSearcher)  
+INFO  HEADLESS Script Paths:
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Debug\Debugger\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\BytePatterns\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Processors\Atmel\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\BSim\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\Jython\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Processors\DATA\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Processors\8051\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\GnuDemangler\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\MicrosoftCodeAnalyzer\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\DecompilerDependent\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Processors\PIC\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Processors\JVM\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\FileFormats\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\PyGhidra\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\SystemEmulation\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\VersionTracking\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\Decompiler\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\SwiftDemangler\ghidra_scripts
+    C:\ghidra-work\scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\Base\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Debug\Debugger-rmi-trace\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\WildcardAssembler\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\FunctionID\ghidra_scripts
+    C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\PDB\ghidra_scripts (HeadlessAnalyzer)  
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
+INFO  Opening existing project: C:\ghidra-work\windcon_proj (HeadlessAnalyzer)  
+INFO  Opening project: C:\ghidra-work\windcon_proj (HeadlessProject)  
+INFO  REPORT: Processing project file: /WINDCON Servo Assistant.exe (HeadlessAnalyzer)  
+INFO  ANALYZING all memory and code: /WINDCON Servo Assistant.exe (HeadlessAnalyzer)  
+WARN  Ignoring leading '_' chars on no-return name '___raise_securityfailure' specified in file: C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\Base\data\PEFunctionsThatDoNotReturn (NoReturnFunctionAnalyzer)  
+WARN  Ignoring leading '_' chars on no-return name '___report_rangecheckfailure' specified in file: C:\ghidra-src\build\dist\ghidra_12.2_DEV_20260327_win_x86_64\ghidra_12.2_DEV\Ghidra\Features\Base\data\PEFunctionsThatDoNotReturn (NoReturnFunctionAnalyzer)  
+INFO  Skipping PDB processing: missing PDB information in program metadata (PdbUniversalAnalyzer)  
+ERROR os/win_x86_64/decompile.exe does not exist (see GettingStarted.md, 'Building Native Components') (DecompileProcessFactory)  
+INFO  Packed database cache: C:\Users\user\AppData\Local\ghidra\packed-db-cache (PackedDatabaseCache)  
+INFO  Applied data type archive: windows_vs12_32 (ApplyDataArchiveAnalyzer)  
+INFO  -----------------------------------------------------
+    ASCII Strings                              4.748 secs
+    Apply Data Archives                        1.910 secs
+    Call Convention ID                         0.093 secs
+    Call-Fixup Installer                       0.016 secs
+    Create Address Tables                      2.070 secs
+    Create Function                            0.000 secs
+    Data Reference                             1.723 secs
+    Decompiler Parameter ID                    1.936 secs
+    Decompiler Switch Analysis                 0.843 secs
+    Demangler GNU                             24.932 secs
+    Demangler Microsoft                        0.161 secs
+    Disassemble Entry Points                   0.405 secs
+    Embedded Media                             0.225 secs
+    External Entry References                  0.002 secs
+    Function ID                                2.607 secs
+    Function Start Pre Search                  0.176 secs
+    Function Start Search                      0.384 secs
+    Function Start Search After Code           0.167 secs
+    Function Start Search After Data           0.169 secs
+    MinGW Relocations                          0.001 secs
+    Non-Returning Functions - Discovered       2.503 secs
+    Non-Returning Functions - Known            0.134 secs
+    PDB Universal                              0.006 secs
+    Reference                                  2.413 secs
+    Scalar Operand References                  3.236 secs
+    Shared Return Calls                        1.337 secs
+    Stack                                      0.952 secs
+    Subroutine References                      1.663 secs
+    WindowsResourceReference                   1.630 secs
+    X86 Function Callee Purge                  0.083 secs
+    x86 Constant Reference Analyzer           16.559 secs
+-----------------------------------------------------
+     Total Time   73 secs
+-----------------------------------------------------
+ (AutoAnalysisManager)  
+INFO  REPORT: Analysis succeeded for file: /WINDCON Servo Assistant.exe (HeadlessAnalyzer)  
+INFO  REPORT: Execute script: WindconProtocolMap.java  (HeadlessAnalyzer)  
+INFO  SCRIPT: C:\ghidra-work\scripts\WindconProtocolMap.java (HeadlessAnalyzer)  
+INFO  WindconProtocolMap.java> === WINDCON PROTOCOL MAP START === (GhidraScript)  
+INFO  WindconProtocolMap.java> Program: WINDCON Servo Assistant.exe (GhidraScript)  
+INFO  WindconProtocolMap.java> -- External Symbols (protocol-relevant) -- (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN4QDir11currentPathEv (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN5QTime11currentTimeEv (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN7QString14compare_helperEPK5QChariPKciN2Qt15CaseSensitivityE (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN7QThread11qt_metacallEN11QMetaObject4CallEiPPv (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN7QThread11qt_metacastEPKc (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN7QThread16staticMetaObjectE (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN7QThread5eventEP6QEvent (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN7QThread5startENS_8PriorityE (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN7QThread6usleepEm (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN7QThreadC2EP7QObject (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN7QThreadD2Ev (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN8QProcess21readAllStandardOutputEv (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN9QDateTime15currentDateTimeEv (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN9QIODevice4readEPcx (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN9QIODevice5writeEPKc (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN9QIODevice5writeEPKcx (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN9QIODevice7readAllEv (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZNK7QObject6senderEv (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZNK7QString7compareERKS_N2Qt15CaseSensitivityE (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN10QZipReaderC1ERK7QString6QFlagsIN9QIODevice12OpenModeFlagEE (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN10QZipReaderD1Ev (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN8QPainter18setCompositionModeENS_15CompositionModeE (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZNK10QZipReader10extractAllERK7QString (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZNK10QZipReader6existsEv (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN15QAbstractSocket16waitForReadyReadEi (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN11QSerialPort11setBaudRateEi6QFlagsINS_9DirectionEE (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN11QSerialPort11setDataBitsENS_8DataBitsE (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN11QSerialPort11setPortNameERK7QString (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN11QSerialPort11setStopBitsENS_8StopBitsE (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN11QSerialPort14setFlowControlENS_11FlowControlE (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN11QSerialPort16staticMetaObjectE (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN11QSerialPort9setParityENS_6ParityE (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN11QSerialPortC1EP7QObject (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN15QSerialPortInfo14availablePortsEv (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN15QSerialPortInfoD1Ev (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZNK15QSerialPortInfo11descriptionEv (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZNK15QSerialPortInfo12manufacturerEv (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZNK15QSerialPortInfo12serialNumberEv (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZNK15QSerialPortInfo14systemLocationEv (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZNK15QSerialPortInfo16vendorIdentifierEv (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZNK15QSerialPortInfo17productIdentifierEv (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZNK15QSerialPortInfo8portNameEv (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN10QTabWidget15setCurrentIndexEi (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN10QTableView14currentChangedERK11QModelIndexS2_ (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN11QListWidget13setItemWidgetEP15QListWidgetItemP7QWidget (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN15QListWidgetItem4readER11QDataStream (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN17QAbstractItemView10commitDataEP7QWidget (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN21QAbstractItemDelegate10commitDataEP7QWidget (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN6QFrame11changeEventEP6QEvent (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN6QFrame13setFrameShapeENS_5ShapeE (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN7QTabBar15setCurrentIndexEi (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN9QComboBox10insertItemEiRK5QIconRK7QStringRK8QVariant (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN9QComboBox11setEditableEb (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN9QComboBox11setItemTextEiRK7QString (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN9QComboBox13clearEditTextEv (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN9QComboBox14setCurrentTextERK7QString (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN9QComboBox15setCurrentIndexEi (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN9QComboBox15setInsertPolicyENS_12InsertPolicyE (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN9QComboBox5clearEv (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZN9QComboBoxC1EP7QWidget (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZNK10QTabWidget12currentIndexEv (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZNK12QTableWidget10currentRowEv (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZNK12QTableWidget13currentColumnEv (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZNK15QListWidgetItem5writeER11QDataStream (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZNK17QAbstractItemView16selectionCommandERK11QModelIndexPK6QEvent (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZNK7QTabBar12currentIndexEv (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZNK9QComboBox11currentTextEv (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZNK9QComboBox12currentIndexEv (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZNK9QComboBox5countEv (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZNK9QComboBox8itemDataEii (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZNK9QComboBox8itemTextEi (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] _ZNK9QComboBox8lineEditEv (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] __deregister_frame_info (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] __register_frame_info (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] GetCommandLineW (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] GetCurrentProcess (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] GetCurrentProcessId (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] GetCurrentThreadId (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] fwrite (GhidraScript)  
+INFO  WindconProtocolMap.java> [ext ] CommandLineToArgvW (GhidraScript)  
+INFO  WindconProtocolMap.java> External keyword symbols: 80 (GhidraScript)  
+INFO  WindconProtocolMap.java> -- Keyword Strings -- (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a0013 :: __register_frame_info (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a0029 :: __deregister_frame_info (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a00c6 :: default (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a0194 :: default (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a01eb :: @default (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a024b :: ?default (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a0614 :: default (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a0dde :: default (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a0eb9 :: :/qss/main/qss/QComboBox.qss (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a0f14 :: 2getSerialSignal() (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a0f34 :: 2checkTempAutSignal() (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a1034 :: :/qss/main/qss/QComboBox_light.qss (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a1296 :: 
+please add authorize file via Serial Number (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a1364 :: wmic baseboard get serialnumber (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a1384 :: wmic diskdrive where index=0 get serialnumber (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a13b2 :: wmic bios get serialnumber (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a13e6 :: Serial Number (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a13f4 :: time.windows.com (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a1405 :: default (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a1438 :: .
+authorize file does not match this computer (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a1466 :: current_time (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a14e2 :: default (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a17cb :: default (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a17d3 :: MW_stopReadflag (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a17ff :: setSerialInfo (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a188f :: mSetSerialInfo (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a189e :: Parity (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a19ab :: 1setModbusMode(QString*) (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a19c4 :: 2getModbusMode(QString*) (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a19e0 :: 1writeData(QString, QString, QString, QString, QString, QString, bool *, int, int, int) (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a1a38 :: 2writeData(QString, QString, QString, QString, QString, QString, bool *, int, int, int) (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a1a90 :: 1readData(QString, QString, QString, QString, QString *, QString, int *, int, int) (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a1ae4 :: 2readData(QString, QString, QString, QString, QString *, QString, int *, int, int) (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a1ba7 :: com.amin.uiplugininterface (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a1c20 :: CurrentRef (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a1c31 :: SpeedRef (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a1e0f :: serialChangedSlot (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a1e78 :: comsetBtnClicked (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a1eeb :: HideBusCurrent! (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a1efb :: ShowBusCurrent! (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a2022 :: serial info (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a2054 :: 2serialOpened() (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a2090 :: 1serialChangedSlot() (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a20a5 :: 2serialChanged() (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a20b6 :: 1setSerialInfo() (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a20dd :: 2stopMainWindowRead(bool) (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a2179 :: 1getSerialSlot() (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a218a :: 2getSerialSignal() (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a219d :: 1checkTempAutSlot() (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a21b1 :: 2checkTempAutSignal() (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a21c7 :: 1readMainWindowData() (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a2320 :: com.amin.toolboxplugininterface (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a249b :: 2readyRead() (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a259d :: default (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a2745 :: default (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a29d3 :: Cdefault (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a29dc :: ChangeSerialPort (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a2a40 :: Write Verified Failed. ASCII (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a2a5d :: Read Verified Failed. ASCII (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a2a79 :: Write RTU Verified Succeed. (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a2a95 :: Write RTU Verified Failed. (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a2ac2 :: write (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a2ad1 :: writeSerialData_TimeOut (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a2aed :: writeSerialData_Succeed (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a2b05 :: DataReadCMD_RTU =  (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a2b2b :: read multiData err (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a2b3e :: 1ChangeSerialPort() (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a2b52 :: 2serialChanged() (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a2b78 :: isModbusEnabled (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a2b88 :: Open Serial Port Succeed!1 (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a2bf2 :: default (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a2bfa :: baudR (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a2e08 :: :/qss/main/qss/QComboBox_light.qss (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a2ea8 :: :/qss/main/qss/QComboBox.qss (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a2eeb :: /serial_settings.ini (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a2f04 :: modbus (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a2f0e :: baudRate (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a2f1f :: parity (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a2f26 :: stopBit (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a2fc0 :: 2currentIndexChanged(int) (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a2fdc :: 1checkCustomBaudRatePolicy(int) (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a32fb :: default (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a3390 :: 1setCurrentValue(int) (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a33a6 :: 2setVoltage_s(int) (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a341d :: 2highMotorTempAlarm_s(bool) (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a3439 :: 2setMotorTemp_s(int) (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a3477 :: 2highDriverTempAlarm_s(bool) (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a3494 :: 2setDriverTemp_s(int) (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a35ee :: 2ChangeRefSpeed(QString) (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a36cd :: 2ChangeRefCurrent(QString) (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a37aa :: default (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a3863 :: 2writeDataRequest(QString) (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a387e :: 1readedDataProcess(QString) (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a389a :: 2readedDataProcess(QString) (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a38b6 :: 1verifyWritedData(QString) (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a38d1 :: 2verifyWritedData(QString) (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a38ec :: 1readAllParameter() (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a3900 :: 2read() (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a3908 :: 1saveCommandClicked() (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a39c7 :: @default (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a3a1c :: Starting Process Readed Data (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a3d8e :: 2readyRead() (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a3e22 :: 2m_currentChanged(int) (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a404a :: 1slotActionCancel() (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a43a5 :: you clicked read! (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a43cb :: read error: (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a4416 :: read err count (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a45ec :: 2read() (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a466d :: default (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a487e :: 1commitAndCloseEditor() (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a494e :: :/main/com_fault (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a49db :: :/main/com_ok (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a4a78 :: :/main/ok_status (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a4b7f :: :/main/err_status (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a4bb5 :: 2writeDataRequest(QString) (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a4bd0 :: 1readedDataProcess(QString) (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a4bec :: 2miniReadedDataProcess(QString) (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a4c0c :: 1verifyWritedData(QString) (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a4c28 :: 2miniVerifyWritedData(QString) (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a4c47 :: 1readAllParameter() (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a4c63 :: 1saveCommandClicked() (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a4d15 :: default (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a4d1d :: Sending Save Command: (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a4d8c :: Starting Process Readed Data (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a4da9 :: lrc Check Error!
+ (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a4e5a :: Write Data Q (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a4f19 :: Write Data Hex: (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a4f29 :: Write Data Decimal: (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a52dd :: 1commitAndCloseEditor() (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a5560 :: :/titlebar/battery (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004a5573 :: :/titlebar/battery_low (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004c4889 :: /* Style the tab using the tab sub-control. Note that
+    it reads QTabBar _not_ QTabWidget */
+QTabBar::tab {
+    background: black;
+    border: 1px solid #3790be;
+    border-right-color: black; /* same as the pane ... (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004c4f62 :: QPushButton {
+    border: 2px solid #4b86a1;
+    border-radius: 5px;
+    color: #4b86a1;
+    padding: 2px;
+    margin: 1px;
+    font: 14px "Microsoft YaHei";
+}
+
+QPushButton:hover {
+    border-color: #65b2d7;
+ ... (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004c52de :: QPushButton {
+    border: 2px solid #4b86a1;
+    border-radius: 6px;
+    background-color: rgb(30, 30, 39);
+    /*min-width: 202px;
+    min-height: 22px;*/
+    padding-left:14px;
+    padding-right:14px;
+    color... (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004c58b9 :: /* Style the tab using the tab sub-control. Note that
+    it reads QTabBar _not_ QTabWidget */
+QTabBar::tab {
+    background: black;
+    border: 1px solid #3790be;
+    border-bottom-color: black; /* same as the pane... (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004c6774 :: QPushButton {
+    border: 2px solid #0b5273;
+    border-radius: 5px;
+    color: #0b5273;
+    padding: 2px;
+    margin: 1px;
+    font: 14px "Microsoft YaHei";
+}
+
+QPushButton:hover {
+    border-color: #2485b3;
+ ... (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004c6a3d :: QPushButton {
+    border: 2px solid #0b5273;
+    border-radius: 6px;
+    background-color: rgb(252, 252, 252);
+    /*min-width: 202px;
+    min-height: 22px;*/
+    padding-left:14px;
+    padding-right:14px;
+    co... (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004c6c40 :: /* Style the tab using the tab sub-control. Note that
+    it reads QTabBar _not_ QTabWidget */
+QTabBar::tab {
+    background: rgb(252, 252, 252);
+    border: 1px solid #0b5273;
+    border-bottom-color: rgb(252, 252,... (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004c6ffd :: rQPushButton {
+    border: 0px solid #8f8f91;
+    border-radius: 2px;
+    background-color: rgb(35, 35, 35);
+    min-width: 10px;
+}
+
+QPushButton:hover {
+    background-color: rgb(95, 95, 95);
+}
+
+QPushButton:pr... (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004c73fd :: ,/* Style the tab using the tab sub-control. Note that
+    it reads QTabBar _not_ QTabWidget */
+
+QTabBar {
+    background: black;
+}
+
+QTabBar::tab {
+    background-color: black;
+    border: 1px solid #3790be;
+  ... (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004c78b3 :: /* Style the tab using the tab sub-control. Note that
+    it reads QTabBar _not_ QTabWidget */
+
+QTabBar {
+    background-color: rgb(252,252,252);
+}
+
+QTabBar::tab {
+    background-color: rgb(252,252,252);
+    bor... (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004c83de :: */
+QComboBox QScrollBar::sub-line:vertical {
+     border: 0px solid grey;
+     background-color: #999999;
+     height: 10px;
+     subcontrol-position: top;
+     subcontrol-origin: margin;
+}
+
+QComboBox QScrollBar... (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 004c8c36 :: */
+QComboBox QScrollBar::sub-line:vertical {
+     border: 0px solid grey;
+     background-color: #434346;
+     height: 10px;
+     subcontrol-position: top;
+     subcontrol-origin: margin;
+}
+
+QComboBox QScrollBar... (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 0058153b :: readedDataProcess (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00581552 :: verifyWritedData (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00581563 :: miniReadedDataProcess (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00581579 :: miniVerifyWritedData (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005815d0 :: readSerialData (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005815df :: QSerialPort* (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005815ec :: serial (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00581638 :: openSerialPort (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00581647 :: closeSerialPort (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00581657 :: readData (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 0058168c :: modbusMode (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 0058169c :: status (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005816b7 :: writeData (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005816d8 :: readMainWindowData (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005816f9 :: ChangeSerialPort (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00581748 :: readMainWindowData_single (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00581762 :: readMainWindowData_twin (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005817a0 :: setModbusMode (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005817c5 :: setSerialInfo (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005817d3 :: serialChangedSlot (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005817e5 :: mGetSerialInfo (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005817f4 :: baudRate (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005817fd :: parity (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00581870 :: getSerialSlot (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 0058187e :: checkTempAutSlot (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005818ef :: readMultiData (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00581919 :: setModbusModeSlot (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00581999 :: mModbusStatus (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005819a7 :: mSerialWriteData (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005819be :: mSetSerialInfo (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005819cd :: Parity (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005819d4 :: mReadyReadData (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005819e3 :: readSerialDataSlot (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 0058232e :: getModbusMode (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 0058233c :: modbusMode (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00582347 :: setModbusMode (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 0058235a :: enableModbus (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00582367 :: status (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 0058236e :: serialWrite (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 0058237f :: getSerialInfo (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 0058238d :: baudRate (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00582396 :: Parity (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005823a5 :: setSerialInfo (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005823b3 :: writeData (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00582408 :: readData (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 0058241d :: readMultiData (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005824ab :: getWriteDataSignal (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005824be :: getReadDataSignal (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005824d0 :: readSerialData (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005824df :: QSerialPort* (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005824ec :: serial (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005825ad :: setSerialNum (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00582680 :: AnimThread (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005828c8 :: setItemClickedStatus (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005828dd :: status (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00582e9a :: m_currentChanged (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00583e21 :: setCurrentTable (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005842cc :: getSerialSignal (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005842dc :: checkTempAutSignal (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005846c0 :: baudRate (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005846c9 :: modbusMode (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005847d0 :: InitializeThread (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00584d30 :: ModbusCommunication (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00585e10 :: SerialPort_Thread (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00585e22 :: ReadWriteSignal (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00585e71 :: modbusMode (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00585e89 :: status (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00585e90 :: MODBUS_CMD* (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00585ece :: serialOpened (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00585edb :: serialReadReady (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00585eeb :: QSerialPort* (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00585ef8 :: serial (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00585f15 :: getModbusSerialData_ASCII (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00585f2f :: getModbusSerialData_RTU (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00585f47 :: mWriteData (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00585f52 :: ReadData (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00585f76 :: modbusMode_r (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00585f83 :: mReadOneData (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00585f9e :: readOneData (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00585faa :: ChangeSerialPort (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00585fbb :: openSerialPort (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00585fca :: closeSerialPort (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00585fda :: setSerialParam (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00585fe9 :: serialSetBaudrate (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00585ffb :: baudRate (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00586004 :: serialSetDataBit (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00586015 :: QSerialPort::DataBits (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00586038 :: serialReadData (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00586059 :: WriteData (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00586063 :: ReadWriteSlot (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00586079 :: MODBUS_CMD** (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00586086 :: enableModbus (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005860af :: writeSerialData (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005860c5 :: setSendOpenSignal (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005860d7 :: readMultiData (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005860e5 :: mReadMultiData (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 0058677f :: serialChanged (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 0058678e :: serialClicked (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 0058679c :: serialInfoChanged (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005867ae :: serialInfo (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005867b9 :: stopMainWindowRead (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005867d1 :: setConnectStatus (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005867e2 :: status (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005867f7 :: serialSetDataBit (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00586808 :: QSerialPort::DataBits (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00586827 :: serialSetBaudrate (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00586839 :: baudRate (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00586842 :: serialSetDataBit_2 (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00586855 :: serialSetParity (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00586865 :: parity (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00586877 :: getBaudRate (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00586883 :: getParity (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00586898 :: getModbusMode (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005868a6 :: setBaudRate (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005868b8 :: serialSetModbusMode (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00586908 :: checkCustomBaudRatePolicy (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00586c7e :: setVoltage (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00586c9c :: setMotorTemp (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00586cb0 :: setDriverTemp (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00586cbe :: highMotorTempAlarm (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00586cd1 :: status (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00586cd8 :: highDriverTempAlarm (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00586e40 :: WarnStatusWidget (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00586e5b :: status (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00586e6a :: setCurrentValue (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005871c0 :: StatusWidgetGroup (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005871d2 :: setVoltage_s (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005871f5 :: setMotorTemp_s (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 0058720b :: setDriverTemp_s (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 0058721b :: highMotorTempAlarm_s (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00587230 :: status (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00587237 :: highDriverTempAlarm_s (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 0058724d :: setVoltage (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 0058725f :: setMotorTemp (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 0058726c :: setDriverTemp (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 0058727a :: highMotorTempAlarm (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 0058728d :: highDriverTempAlarm (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005874f0 :: SpeedMeterWidget (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00587501 :: setSpeed (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00587510 :: setRefSpeedRpm (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00587526 :: setfdbSpeedRpm (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 0058753c :: setrefCurrent (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00587551 :: setfdbCurrent (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 0058756f :: setcurrentODD (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005877e0 :: SpeedCurrentWidget (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 005877f3 :: ChangeRefCurrent (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00587809 :: ChangeRefSpeed (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00587818 :: setRefCurrent (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00587826 :: current (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 0058782e :: setFdbCurrent (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 0058783c :: setBusCurrent (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 0058784a :: showBusCurrent (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00587860 :: setRefSpeed (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 0058786c :: speed (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00587872 :: setFdbSpeed (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00587bfe :: writeDataRequest (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] 00587c14 :: readedDataProcess (GhidraScript)  
+INFO  WindconProtocolMap.java> [str ] ... truncated at 300 entries (GhidraScript)  
+INFO  WindconProtocolMap.java> Scanned string items: 1206, matched keyword strings: 300 (GhidraScript)  
+INFO  WindconProtocolMap.java> -- Register Constant References -- (GhidraScript)  
+INFO  WindconProtocolMap.java> [reg ] 0x1000 @ 00401231 in FUN_00401150 :: MOV dword ptr [ESP],0x401000 (GhidraScript)  
+INFO  WindconProtocolMap.java> [reg ] 0x1014 @ 004137d8 in FUN_00413550 :: MOV dword ptr [ESP],0x4a1014 (GhidraScript)  
+INFO  WindconProtocolMap.java> [reg ] 0x1000 @ 0048eae2 in FUN_0048eae0 :: CMP EAX,0x1000 (GhidraScript)  
+INFO  WindconProtocolMap.java> [reg ] 0x1000 @ 0048eaed in FUN_0048eae0 :: SUB ECX,0x1000 (GhidraScript)  
+INFO  WindconProtocolMap.java> [reg ] 0x1000 @ 0048eaf6 in FUN_0048eae0 :: SUB EAX,0x1000 (GhidraScript)  
+INFO  WindconProtocolMap.java> [reg ] 0x1000 @ 0048eafb in FUN_0048eae0 :: CMP EAX,0x1000 (GhidraScript)  
+INFO  WindconProtocolMap.java> Unique register constant hits: 6 (GhidraScript)  
+INFO  WindconProtocolMap.java> -- Function Summary -- (GhidraScript)  
+INFO  WindconProtocolMap.java> [func] __register_frame_info @ 0048eac8 (GhidraScript)  
+INFO  WindconProtocolMap.java> [func] fwrite @ 0048f738 (GhidraScript)  
+INFO  WindconProtocolMap.java> Total functions: 635, keyword-named functions: 2 (GhidraScript)  
+INFO  WindconProtocolMap.java> === WINDCON PROTOCOL MAP END === (GhidraScript)  
+INFO  ANALYZING changes made by post scripts: /WINDCON Servo Assistant.exe (HeadlessAnalyzer)  
+INFO  REPORT: Post-analysis succeeded for file: /WINDCON Servo Assistant.exe (HeadlessAnalyzer)  
+INFO  REPORT: Save succeeded for processed file: /WINDCON Servo Assistant.exe (HeadlessAnalyzer)  
