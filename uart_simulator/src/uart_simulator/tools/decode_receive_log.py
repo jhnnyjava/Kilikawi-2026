@@ -13,6 +13,20 @@ from uart_simulator.tools.windcon_map import label_stream_words
 from uart_simulator.tools.windcon_map import STREAM_FIELD_NAMES
 
 
+# Field aliases for convenient filtering (short names -> full field names)
+FIELD_ALIASES = {
+    "speed": "speed_feedback_rpm",
+    "current": "current_feedback_da",
+    "voltage": "bus_voltage_dv",
+    "status": "status_latch",
+    "temp": "driver_temp_c",
+    "work_mode": "work_mode",
+    "run_mode": "run_mode",
+    "marker": "marker_word",
+    "fault": "fault_code",
+    "fault_active": "fault_active",
+}
+
 FRAME_RX = re.compile(r":(?P<hex>[0-9A-Fa-f]{8,})")
 
 
@@ -95,6 +109,22 @@ def classify(words: list[int]) -> str:
     return classify_marker(words[7])
 
 
+def resolve_field_names(field_spec: str) -> list[str]:
+    """Resolve field names, handling aliases and validation."""
+    if not field_spec.strip():
+        return []
+    
+    requested = [f.strip() for f in field_spec.split(",") if f.strip()]
+    resolved = []
+    
+    for f in requested:
+        # Try alias lookup first, then use as-is if it's a valid readable field
+        full_name = FIELD_ALIASES.get(f, f)
+        resolved.append(full_name)
+    
+    return resolved
+
+
 def infer_fields(words_i16: list[int]) -> dict[str, int]:
     # This inference is based on the decompiled emulator compatibility stream
     # and observed capture statistics. Keep as best-effort labels.
@@ -134,8 +164,8 @@ def frame_to_record(fr: DecodedFrame) -> dict[str, object]:
     return record
 
 
-def write_csv(frames: list[DecodedFrame], out_path: Path) -> None:
-    fieldnames = [
+def write_csv(frames: list[DecodedFrame], out_path: Path, fields_filter: list[str] | None = None) -> None:
+    all_fieldnames = [
         "line_no",
         "address",
         "function",
@@ -163,6 +193,12 @@ def write_csv(frames: list[DecodedFrame], out_path: Path) -> None:
         "temp_or_power_est",
         "small_delta_2",
     ]
+    
+    # If fields_filter specified, use only those fields; otherwise use all
+    if fields_filter:
+        fieldnames = [f for f in all_fieldnames if f in fields_filter]
+    else:
+        fieldnames = all_fieldnames
 
     with out_path.open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
@@ -183,17 +219,32 @@ def write_csv(frames: list[DecodedFrame], out_path: Path) -> None:
 
             inferred = infer_fields(words_i16)
             row.update(inferred)
+            
+            # Filter row to only requested fields
+            if fields_filter:
+                row = {k: v for k, v in row.items() if k in fields_filter}
+            
             writer.writerow(row)
 
 
-def write_json(frames: list[DecodedFrame], out_path: Path) -> None:
+def write_json(frames: list[DecodedFrame], out_path: Path, fields_filter: list[str] | None = None) -> None:
     payload = {
         "frame_count": len(frames),
         "functions": dict(Counter(fr.function for fr in frames)),
         "byte_counts": dict(Counter(fr.byte_count for fr in frames)),
         "classes": dict(Counter(classify(fr.words_u16) for fr in frames)),
-        "frames": [frame_to_record(fr) for fr in frames],
+        "frames": [],
     }
+    
+    for fr in frames:
+        record = frame_to_record(fr)
+        
+        # If fields_filter specified, keep only those readable fields
+        if fields_filter:
+            filtered_readable = {k: v for k, v in record["readable"].items() if k in fields_filter}
+            record["readable"] = filtered_readable
+        
+        payload["frames"].append(record)
 
     out_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
 
@@ -240,6 +291,13 @@ def build_parser() -> argparse.ArgumentParser:
         help="Optional output JSON path",
     )
     p.add_argument(
+        "--fields",
+        default="",
+        help="Comma-separated field names to include in output (e.g., 'speed,fault,voltage'). "
+             "Supports aliases: speed, current, voltage, status, temp, fault, marker, mode, driver_temp, work_mode, run_mode, fault_active. "
+             "Or use full field names from readable output. If omitted, includes all fields.",
+    )
+    p.add_argument(
         "--no-lrc-check",
         action="store_true",
         help="Accept frames without strict LRC validation",
@@ -252,14 +310,19 @@ def main() -> None:
     frames = parse_frames(Path(args.input), strict_lrc=not args.no_lrc_check)
     print_summary(frames)
 
+    # Resolve field names if specified
+    fields_filter = resolve_field_names(args.fields) if args.fields else None
+    if fields_filter and args.fields:
+        print(f"fields_filter={fields_filter}")
+
     if args.output_csv:
         out = Path(args.output_csv)
-        write_csv(frames, out)
+        write_csv(frames, out, fields_filter=fields_filter)
         print(f"csv_written={out}")
 
     if args.output_json:
         out = Path(args.output_json)
-        write_json(frames, out)
+        write_json(frames, out, fields_filter=fields_filter)
         print(f"json_written={out}")
 
 
