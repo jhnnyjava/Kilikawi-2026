@@ -2,10 +2,15 @@ from __future__ import annotations
 
 import argparse
 import csv
+import json
 import re
 from collections import Counter
 from dataclasses import dataclass
 from pathlib import Path
+
+from uart_simulator.tools.windcon_map import classify_marker
+from uart_simulator.tools.windcon_map import label_stream_words
+from uart_simulator.tools.windcon_map import STREAM_FIELD_NAMES
 
 
 FRAME_RX = re.compile(r":(?P<hex>[0-9A-Fa-f]{8,})")
@@ -87,14 +92,7 @@ def parse_frames(path: Path, strict_lrc: bool = True) -> list[DecodedFrame]:
 def classify(words: list[int]) -> str:
     if len(words) < 8:
         return "short"
-    marker = words[7]
-    if marker == 0xF00B:
-        return "compat-marker"
-    if marker == 0x4CCD:
-        return "float-marker"
-    if marker == 0x0000:
-        return "zero-marker"
-    return "mixed"
+    return classify_marker(words[7])
 
 
 def infer_fields(words_i16: list[int]) -> dict[str, int]:
@@ -117,6 +115,25 @@ def infer_fields(words_i16: list[int]) -> dict[str, int]:
     return fields
 
 
+def build_readable_fields(words_i16: list[int]) -> dict[str, int]:
+    return label_stream_words(words_i16)
+
+
+def frame_to_record(fr: DecodedFrame) -> dict[str, object]:
+    words_i16 = fr.words_i16
+    record: dict[str, object] = {
+        "line_no": fr.line_no,
+        "address": fr.address,
+        "function": fr.function,
+        "byte_count": fr.byte_count,
+        "class": classify(fr.words_u16),
+        "words_i16": words_i16,
+        "readable": build_readable_fields(words_i16),
+        "inferred": infer_fields(words_i16),
+    }
+    return record
+
+
 def write_csv(frames: list[DecodedFrame], out_path: Path) -> None:
     fieldnames = [
         "line_no",
@@ -124,6 +141,7 @@ def write_csv(frames: list[DecodedFrame], out_path: Path) -> None:
         "function",
         "byte_count",
         "class",
+        *STREAM_FIELD_NAMES,
         "w0_i16",
         "w1_i16",
         "w2_i16",
@@ -136,9 +154,14 @@ def write_csv(frames: list[DecodedFrame], out_path: Path) -> None:
         "w9_i16",
         "speed_feedback_est",
         "current_feedback_est",
+        "ref_or_aux_hi",
+        "ref_or_aux_lo",
+        "status_or_delta",
         "mode_word",
+        "fault_or_small_status",
         "marker_word",
         "temp_or_power_est",
+        "small_delta_2",
     ]
 
     with out_path.open("w", newline="", encoding="utf-8") as f:
@@ -154,12 +177,25 @@ def write_csv(frames: list[DecodedFrame], out_path: Path) -> None:
                 "byte_count": fr.byte_count,
                 "class": classify(fr.words_u16),
             }
+            row.update(build_readable_fields(words_i16))
             for i in range(min(10, len(words_i16))):
                 row[f"w{i}_i16"] = words_i16[i]
 
             inferred = infer_fields(words_i16)
             row.update(inferred)
             writer.writerow(row)
+
+
+def write_json(frames: list[DecodedFrame], out_path: Path) -> None:
+    payload = {
+        "frame_count": len(frames),
+        "functions": dict(Counter(fr.function for fr in frames)),
+        "byte_counts": dict(Counter(fr.byte_count for fr in frames)),
+        "classes": dict(Counter(classify(fr.words_u16) for fr in frames)),
+        "frames": [frame_to_record(fr) for fr in frames],
+    }
+
+    out_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
 
 
 def print_summary(frames: list[DecodedFrame]) -> None:
@@ -199,6 +235,11 @@ def build_parser() -> argparse.ArgumentParser:
         help="Optional output CSV path",
     )
     p.add_argument(
+        "--output-json",
+        default="",
+        help="Optional output JSON path",
+    )
+    p.add_argument(
         "--no-lrc-check",
         action="store_true",
         help="Accept frames without strict LRC validation",
@@ -215,6 +256,11 @@ def main() -> None:
         out = Path(args.output_csv)
         write_csv(frames, out)
         print(f"csv_written={out}")
+
+    if args.output_json:
+        out = Path(args.output_json)
+        write_json(frames, out)
+        print(f"json_written={out}")
 
 
 if __name__ == "__main__":
