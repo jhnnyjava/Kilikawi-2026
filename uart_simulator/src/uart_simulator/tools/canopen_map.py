@@ -10,7 +10,6 @@ Reference:
 
 from dataclasses import dataclass
 from enum import IntEnum
-from typing import Optional
 
 
 class COBIDType(IntEnum):
@@ -224,12 +223,15 @@ def parse_canopen_frame(can_id: int, data: bytes) -> CANopenFrame:
 
 def _get_function_name(function_bits: int, cob_id: int) -> str:
     """Get human-readable function name from COB-ID."""
+    if cob_id == 0x000:
+        return "NMT"
+    if cob_id == int(COBIDType.SYNC):
+        return "SYNC"
+    if int(COBIDType.EMCY) < cob_id <= 0x0FF:
+        return "EMCY"
+
     if function_bits == int(COBIDType.NMT):
         return "NMT" if cob_id == 0x000 else "NMT_ERROR"
-    elif function_bits == int(COBIDType.SYNC):
-        return "SYNC"
-    elif function_bits == int(COBIDType.EMCY):
-        return "EMCY"
     elif function_bits == int(COBIDType.TPDO1):
         return "TPDO1"
     elif function_bits == int(COBIDType.RPDO1):

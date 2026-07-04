@@ -1,6 +1,8 @@
 """Tests for emulator server frame classification."""
 
+from uart_simulator.protocol.ascii_modbus import AsciiFrame
 from uart_simulator.emulator.server import _looks_like_read_response_payload
+from uart_simulator.emulator.server import _looks_like_response
 from uart_simulator.emulator.server import _build_real_format_words
 from uart_simulator.emulator.server import _build_response
 from uart_simulator.emulator.server import _u16_to_i16
@@ -23,6 +25,25 @@ def test_rejects_invalid_byte_count_mismatch() -> None:
     """Byte count mismatch should not be classified as a valid response payload."""
     payload = bytes([0x14]) + bytes(3)
     assert _looks_like_read_response_payload(payload) is False
+
+
+def test_read_request_near_response_shape_is_not_skipped() -> None:
+    """A valid FC03 request starting at 0x0300,count=1 is not a response."""
+    frame = AsciiFrame(address=1, function=0x03, payload=b"\x03\x00\x00\x01", lrc=0)
+    assert _looks_like_response(frame) is False
+
+
+def test_read_response_is_skipped() -> None:
+    """FC03 response payload uses byte_count + register data."""
+    frame = AsciiFrame(address=1, function=0x03, payload=b"\x04\x00\x01\x00\x02", lrc=0)
+    assert _looks_like_response(frame) is True
+
+
+def test_response_shape_boundary_rejects_odd_byte_count() -> None:
+    """Odd byte_count cannot contain whole 16-bit registers."""
+    frame = AsciiFrame(address=1, function=0x03, payload=b"\x03\x00\x00\x01", lrc=0)
+    assert _looks_like_read_response_payload(frame.payload) is False
+    assert _looks_like_response(frame) is False
 
 
 def test_real_format_words_shape_and_marker() -> None:

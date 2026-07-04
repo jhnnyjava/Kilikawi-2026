@@ -9,6 +9,7 @@ import tkinter as tk
 from tkinter import ttk
 from datetime import datetime
 from pathlib import Path
+from collections.abc import Callable
 
 from uart_simulator.emulator import server as emulator_server
 from uart_simulator.emulator.model import (
@@ -16,6 +17,8 @@ from uart_simulator.emulator.model import (
     ENCODER_PIN_FUNCTIONS,
     IO_PIN_FUNCTIONS,
 )
+from uart_simulator.tools.controller_client import ControllerClient
+from uart_simulator.tools.controller_client import ControllerClientError
 
 
 # Datasheet-oriented layout (3 rows x 10 columns), numbered by column:
@@ -101,6 +104,24 @@ def _dim_hex(color: str, factor: float) -> str:
     return f"#{r:02x}{g:02x}{b:02x}"
 
 
+def _scale_kwargs(
+    *,
+    from_: int,
+    to: int,
+    variable: tk.Variable,
+    command: object | None = None,
+) -> dict[str, object]:
+    options: dict[str, object] = {
+        "from_": from_,
+        "to": to,
+        "orient": "horizontal",
+        "variable": variable,
+    }
+    if command is not None:
+        options["command"] = command
+    return options
+
+
 class SimulatorApp:
     def __init__(self, root: tk.Tk) -> None:
         self.root = root
@@ -172,6 +193,16 @@ class SimulatorApp:
         self.manual_voltage_var = tk.IntVar(value=540)
         self.manual_position_var = tk.IntVar(value=0)
         self.manual_error_code_var = tk.IntVar(value=0)
+
+        self.controller_preset_var = tk.StringVar(value="Enable Drive")
+        self.controller_register_var = tk.StringVar(value="0x1008")
+        self.controller_value_var = tk.StringVar(value="0x0001")
+        self.controller_read_register_var = tk.StringVar(value="0x1008")
+        self.controller_read_count_var = tk.IntVar(value=1)
+        self.controller_action_text = tk.StringVar(value="Direct controller writes are idle.")
+        self.controller_result_text = tk.StringVar(
+            value="Stop the bridge first if the controller port is already in use by another process."
+        )
 
         self._selected_io_index = 0
         self._encoder_connected = [tk.BooleanVar(value=True) for _ in range(8)]
@@ -340,12 +371,18 @@ class SimulatorApp:
         ).grid(row=6, column=0, columnspan=4, sticky="w", pady=4)
 
         ttk.Label(parent, text="Target Velocity (rpm)").grid(row=7, column=0, sticky="w", pady=4)
-        ttk.Scale(parent, from_=-3000, to=3000, orient="horizontal", command=self._on_velocity_change).grid(
+        ttk.Scale(
+            parent,
+            **_scale_kwargs(from_=-3000, to=3000, variable=self.target_velocity, command=self._on_velocity_change),
+        ).grid(
             row=7, column=1, columnspan=3, sticky="ew"
         )
 
         ttk.Label(parent, text="Target Position").grid(row=8, column=0, sticky="w", pady=4)
-        ttk.Scale(parent, from_=-12000, to=12000, orient="horizontal", command=self._on_position_change).grid(
+        ttk.Scale(
+            parent,
+            **_scale_kwargs(from_=-12000, to=12000, variable=self.target_position, command=self._on_position_change),
+        ).grid(
             row=8, column=1, columnspan=3, sticky="ew"
         )
 
@@ -404,6 +441,67 @@ class SimulatorApp:
         ttk.Label(mirror, textvariable=self.windcon_named_words_text).grid(row=3, column=1, sticky="w")
         ttk.Label(mirror, text="Decoded Mirror:").grid(row=4, column=0, sticky="w")
         ttk.Label(mirror, textvariable=self.windcon_mirror_text).grid(row=4, column=1, sticky="w")
+
+        write_frame = ttk.LabelFrame(parent, text="Controller Write Bench", padding=8)
+        write_frame.grid(row=12, column=0, columnspan=4, sticky="ew", pady=(10, 0))
+        write_frame.columnconfigure(1, weight=1)
+        write_frame.columnconfigure(3, weight=1)
+
+        ttk.Label(write_frame, text="Use this panel to send direct Modbus ASCII writes to the real controller.").grid(
+            row=0, column=0, columnspan=4, sticky="w"
+        )
+        ttk.Label(write_frame, text="Target Port:").grid(row=1, column=0, sticky="w", pady=(6, 2))
+        ttk.Label(write_frame, textvariable=self.real_port_var).grid(row=1, column=1, sticky="w", pady=(6, 2))
+        ttk.Label(write_frame, text="Node:").grid(row=1, column=2, sticky="e", pady=(6, 2))
+        ttk.Label(write_frame, textvariable=self.node_var).grid(row=1, column=3, sticky="w", pady=(6, 2))
+
+        ttk.Label(write_frame, text="Preset").grid(row=2, column=0, sticky="w", pady=4)
+        ttk.Combobox(
+            write_frame,
+            textvariable=self.controller_preset_var,
+            values=[
+                "Enable Drive",
+                "Disable Drive",
+                "Mode Speed",
+                "Mode Torque",
+                "Mode Position",
+                "Speed +500",
+                "Speed +1000",
+                "Speed -500",
+                "Speed -1000",
+                "Clear Fault",
+            ],
+            state="readonly",
+            width=18,
+        ).grid(row=2, column=1, sticky="w", pady=4)
+        ttk.Button(write_frame, text="Apply Preset", command=self._apply_controller_preset).grid(
+            row=2, column=2, padx=4, pady=4, sticky="w"
+        )
+        ttk.Button(write_frame, text="Read Register", command=self._read_controller_register).grid(
+            row=2, column=3, padx=4, pady=4, sticky="w"
+        )
+        ttk.Label(write_frame, text="Count").grid(row=2, column=4, sticky="e", padx=(10, 4), pady=4)
+        ttk.Entry(write_frame, textvariable=self.controller_read_count_var, width=6).grid(row=2, column=5, sticky="w", pady=4)
+
+        ttk.Label(write_frame, text="Register").grid(row=3, column=0, sticky="w", pady=4)
+        ttk.Entry(write_frame, textvariable=self.controller_register_var, width=14).grid(row=3, column=1, sticky="w", pady=4)
+        ttk.Label(write_frame, text="Value").grid(row=3, column=2, sticky="e", pady=4)
+        ttk.Entry(write_frame, textvariable=self.controller_value_var, width=16).grid(row=3, column=3, sticky="w", pady=4)
+
+        ttk.Button(write_frame, text="Write Single", command=self._write_controller_register).grid(
+            row=4, column=0, padx=4, pady=(6, 2), sticky="w"
+        )
+        ttk.Label(
+            write_frame,
+            text="Common targets: 0x1007 mode, 0x1008 run, 0x100B speed ref, 0x100C current ref, 0x101D fault code",
+        ).grid(row=4, column=1, columnspan=3, sticky="w", pady=(6, 2))
+
+        ttk.Label(write_frame, text="Status:").grid(row=5, column=0, sticky="w", pady=(6, 2))
+        ttk.Label(write_frame, textvariable=self.controller_action_text).grid(row=5, column=1, columnspan=3, sticky="w", pady=(6, 2))
+        ttk.Label(write_frame, text="Last Response:").grid(row=6, column=0, sticky="w")
+        ttk.Label(write_frame, textvariable=self.controller_result_text, wraplength=980, justify="left").grid(
+            row=6, column=1, columnspan=3, sticky="w"
+        )
 
     def _build_manual_panel(self, parent: ttk.Frame) -> None:
         """Manual control tab for real-time variable adjustment and interface verification."""
@@ -718,12 +816,10 @@ class SimulatorApp:
 
 
     def _on_velocity_change(self, raw: str) -> None:
-        self.target_velocity.set(int(float(raw)))
-        self.state.target_velocity_rpm = self.target_velocity.get()
+        self.state.target_velocity_rpm = int(float(raw))
 
     def _on_position_change(self, raw: str) -> None:
-        self.target_position.set(int(float(raw)))
-        self.state.set_target_position(self.target_position.get())
+        self.state.set_target_position(int(float(raw)))
 
     def enable(self) -> None:
         self.state.enabled = True
@@ -767,6 +863,13 @@ class SimulatorApp:
         baud = int(self.baud_var.get())
         node = int(self.node_var.get())
         real_port = self.real_port_var.get().strip()
+        push_mode = self.push_marker_mode_var.get().strip().lower() or "auto"
+        push_telemetry = bool(self.push_telemetry_var.get())
+        push_interval_ms = max(1, int(self.push_interval_ms_var.get()))
+        push_when_idle_ms = max(0, int(self.push_idle_ms_var.get()))
+        push_schema_lock_ms = max(0, int(self.push_schema_lock_ms_var.get()))
+        if mode != "REAL":
+            self.windcon_marker_mode_text.set(f"marker mode={push_mode}")
 
         def _worker() -> None:
             try:
@@ -775,8 +878,6 @@ class SimulatorApp:
                         raise RuntimeError("Real controller port is required in REAL mode")
                     self._run_real_bridge(bridge_port, real_port, baud)
                 else:
-                    push_mode = self.push_marker_mode_var.get().strip().lower() or "auto"
-                    self.windcon_marker_mode_text.set(f"marker mode={push_mode}")
                     emulator_server.run(
                         port=bridge_port,
                         baud=baud,
@@ -785,11 +886,11 @@ class SimulatorApp:
                         step_state=False,
                         stop_predicate=self._uart_stop.is_set,
                         trace_frames=True,
-                        push_telemetry=bool(self.push_telemetry_var.get()),
-                        push_interval_ms=max(1, int(self.push_interval_ms_var.get())),
+                        push_telemetry=push_telemetry,
+                        push_interval_ms=push_interval_ms,
                         push_marker_mode=push_mode,
-                        push_when_idle_ms=max(0, int(self.push_idle_ms_var.get())),
-                        push_schema_lock_ms=max(0, int(self.push_schema_lock_ms_var.get())),
+                        push_when_idle_ms=push_when_idle_ms,
+                        push_schema_lock_ms=push_schema_lock_ms,
                         frame_event_cb=self._on_emulator_frame_event,
                     )
             except Exception as exc:
@@ -803,7 +904,7 @@ class SimulatorApp:
         else:
             self.connection_text.set(
                 f"SIM bridge on {bridge_port} @ {baud} node={node} "
-                f"push={'ON' if self.push_telemetry_var.get() else 'OFF'}"
+                f"push={'ON' if push_telemetry else 'OFF'}"
             )
 
     def _connect_real_controller(self) -> None:
@@ -842,6 +943,84 @@ class SimulatorApp:
             self.scenario_text.set("Scenario: ON (dynamic RS485/CAN map test)")
         else:
             self.scenario_text.set("Scenario: OFF")
+
+    @staticmethod
+    def _parse_int_text(raw: str) -> int:
+        text = raw.strip().replace("_", "")
+        if not text:
+            raise ValueError("empty value")
+        if text.lower().startswith(("0x", "+0x", "-0x")):
+            return int(text, 0)
+        if any(ch in "abcdefABCDEF" for ch in text):
+            return int(text, 16)
+        return int(text, 10)
+
+    def _controller_client(self) -> ControllerClient:
+        return ControllerClient(self.real_port_var.get().strip(), int(self.baud_var.get()), int(self.node_var.get()))
+
+    def _run_controller_task(self, title: str, worker: Callable[[], tuple[str, str]]) -> None:
+        self.controller_action_text.set(f"{title}...")
+
+        def _background() -> None:
+            try:
+                summary, detail = worker()
+            except (ControllerClientError, ValueError, OSError, RuntimeError) as exc:
+                self.root.after(0, lambda e=exc: self.controller_action_text.set(f"{title} failed: {e}"))
+                return
+
+            self.root.after(0, lambda s=summary: self.controller_action_text.set(s))
+            self.root.after(0, lambda d=detail: self.controller_result_text.set(d))
+
+        threading.Thread(target=_background, daemon=True).start()
+
+    def _apply_controller_preset(self) -> None:
+        preset = self.controller_preset_var.get().strip().lower()
+        presets: dict[str, tuple[int, int]] = {
+            "enable drive": (0x1008, 0x0001),
+            "disable drive": (0x1008, 0x0000),
+            "mode speed": (0x1007, 0x0001),
+            "mode torque": (0x1007, 0x0003),
+            "mode position": (0x1007, 0x0009),
+            "speed +500": (0x100B, 500),
+            "speed +1000": (0x100B, 1000),
+            "speed -500": (0x100B, -500),
+            "speed -1000": (0x100B, -1000),
+            "clear fault": (0x101D, 0x0000),
+        }
+        if preset not in presets:
+            raise ValueError(f"Unknown preset: {self.controller_preset_var.get()}")
+        register, value = presets[preset]
+        self.controller_register_var.set(f"0x{register:04X}")
+        self.controller_value_var.set(str(value) if value < 0 else f"0x{value & 0xFFFF:04X}")
+        self._write_controller_register()
+
+    def _write_controller_register(self) -> None:
+        register = self._parse_int_text(self.controller_register_var.get()) & 0xFFFF
+        value = self._parse_int_text(self.controller_value_var.get())
+
+        def _worker() -> tuple[str, str]:
+            client = self._controller_client()
+            tx = client.write_single(register, value)
+            summary = f"Wrote 0x{register:04X} = 0x{value & 0xFFFF:04X}"
+            detail = f"TX {tx.request_frame.strip().decode('ascii', errors='replace')} | RX {tx.response_frame.strip().decode('ascii', errors='replace')}"
+            return summary, detail
+
+        self._run_controller_task("Writing register", _worker)
+
+    def _read_controller_register(self) -> None:
+        register = self._parse_int_text(self.controller_register_var.get()) & 0xFFFF
+        count = max(1, min(16, int(self.controller_read_count_var.get())))
+
+        def _worker() -> tuple[str, str]:
+            client = self._controller_client()
+            tx = client.read_holding(register, count)
+            words = tx.words_u16 or []
+            words_text = ", ".join(f"0x{word:04X}" for word in words) if words else "<no data>"
+            summary = f"Read 0x{register:04X}+{count}"
+            detail = f"TX {tx.request_frame.strip().decode('ascii', errors='replace')} | RX {tx.response_frame.strip().decode('ascii', errors='replace')} | Values: {words_text}"
+            return summary, detail
+
+        self._run_controller_task("Reading register", _worker)
 
     def _apply_test_scenario(self, dt: float) -> None:
         # 30-second loop exercising telemetry, enable states, direction,

@@ -22,6 +22,7 @@ dev = [
 uart-emulator = "uart_simulator.emulator.server:main"
 uart-sniffer = "uart_simulator.tools.sniffer:main"
 uart-sim-gui = "uart_simulator.gui.app:main"
+uart-legacy-gui = "uart_simulator.gui.legacy_app:main"
 uart-virtual-lab = "uart_simulator.tools.virtual_lab:main"
 uart-encoding-ref = "uart_simulator.tools.encoding_reference:main"
 uart-decode-log = "uart_simulator.tools.decode_receive_log:main"

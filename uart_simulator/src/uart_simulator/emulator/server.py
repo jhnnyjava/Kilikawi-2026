@@ -10,7 +10,7 @@ from typing import Any
 import serial
 
 from uart_simulator.emulator.model import DriveState
-from uart_simulator.protocol.ascii_modbus import ProtocolError, decode_frame, encode_frame
+from uart_simulator.protocol.ascii_modbus import AsciiFrame, ProtocolError, decode_frame, encode_frame
 
 
 _COMPAT_REG_NAMES: dict[int, str] = {
@@ -41,13 +41,33 @@ _COMPAT_REG_NAMES: dict[int, str] = {
 
 
 def _looks_like_read_response_payload(payload: bytes) -> bool:
-    # Read response payload format is: [byte_count][data...], where
-    # len(data) equals byte_count. This is different from read request payload
-    # format [start_hi][start_lo][count_hi][count_lo].
+    """Return True for a Modbus read response payload: byte_count + data bytes."""
     if len(payload) < 1:
         return False
     byte_count = payload[0]
-    return len(payload) == byte_count + 1
+    return byte_count % 2 == 0 and len(payload) == byte_count + 1
+
+
+def _looks_like_read_request_payload(payload: bytes) -> bool:
+    """Return True for a Modbus read request payload: start register + count."""
+    if len(payload) != 4:
+        return False
+    count = int.from_bytes(payload[2:4], "big")
+    return 0 < count <= 120
+
+
+def _looks_like_response(frame: AsciiFrame) -> bool:
+    """Detect echoed read responses seen on a shared serial line.
+
+    FC03/FC04 requests and responses both arrive under the same function code.
+    The old byte-count-only heuristic misfired on valid requests such as
+    start=0x0300,count=1 because the first byte looked like a response byte
+    count. Treat a frame as a response only when it has the response byte-count
+    shape and cannot be a valid read request.
+    """
+    if frame.function not in (0x03, 0x04):
+        return False
+    return _looks_like_read_response_payload(frame.payload) and not _looks_like_read_request_payload(frame.payload)
 
 
 def _to_u16_i16(value: int) -> int:
@@ -372,7 +392,7 @@ def run(
                     # If this listener sees a function 0x03/0x04 response frame
                     # on a shared line, ignore it quietly instead of flagging a
                     # malformed request warning.
-                    if frame.function in (0x03, 0x04) and _looks_like_read_response_payload(frame.payload):
+                    if _looks_like_response(frame):
                         continue
 
                     if frame_event_cb is not None:

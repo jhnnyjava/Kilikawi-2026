@@ -1,1 +1,8 @@
 __pycache__/
+*.pyc
+
+# Python environments and build artifacts
+uart_simulator/.venv/
+uart_simulator/src/*.egg-info/
+dist/
+build/

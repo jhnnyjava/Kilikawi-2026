@@ -16,12 +16,17 @@ src/uart_simulator/gui/app.py
 src/uart_simulator/protocol/__init__.py
 src/uart_simulator/protocol/ascii_modbus.py
 src/uart_simulator/tools/__init__.py
+src/uart_simulator/tools/canopen_map.py
+src/uart_simulator/tools/decode_can_log.py
 src/uart_simulator/tools/decode_receive_log.py
 src/uart_simulator/tools/encoding_reference.py
 src/uart_simulator/tools/sniffer.py
 src/uart_simulator/tools/virtual_lab.py
 src/uart_simulator/tools/virtual_terminal.py
+src/uart_simulator/tools/windcon_map.py
 tests/test_encoding_reference.py
 tests/test_model.py
 tests/test_protocol.py
+tests/test_rpm_profile_injection.py
 tests/test_server_parser.py
+tests/test_windcon_map.py

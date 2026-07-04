@@ -112,7 +112,7 @@ def frame_to_record(fr: DecodedCANFrame) -> dict[str, object]:
 
 def write_csv(frames: list[DecodedCANFrame], out_path: Path) -> None:
     """Write decoded CAN frames to CSV."""
-    fieldnames = [
+    base_fieldnames = [
         "line_no",
         "can_id",
         "can_id_hex",
@@ -124,6 +124,8 @@ def write_csv(frames: list[DecodedCANFrame], out_path: Path) -> None:
         "is_pdo",
         "pdo_type",
     ]
+    payload_fieldnames = sorted({key for fr in frames for key in fr.pdo_payload})
+    fieldnames = [*base_fieldnames, *payload_fieldnames]
 
     with out_path.open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
@@ -131,6 +133,8 @@ def write_csv(frames: list[DecodedCANFrame], out_path: Path) -> None:
 
         for fr in frames:
             record = frame_to_record(fr)
+            for key in payload_fieldnames:
+                record[key] = fr.pdo_payload.get(key, "")
             writer.writerow(record)
 
 

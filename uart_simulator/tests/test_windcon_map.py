@@ -33,7 +33,8 @@ def test_register_name_known_and_unknown() -> None:
 
 
 def test_write_json_emits_structured_payload() -> None:
-    capture = Path("/home/johnsumba/Downloads/Kilikawi 2026/windcony/data/Receive_20260326164249.txt")
+    capture = Path(__file__).resolve().parents[2] / "data" / "Receive_20260326164249.txt"
+    assert capture.exists()
     frames = parse_frames(capture)
 
     with TemporaryDirectory() as tmpdir:
