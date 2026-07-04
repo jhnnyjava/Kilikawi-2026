@@ -154,20 +154,20 @@ class DriveState:
                 self._update_encoder_pins()
                 return
 
-            accel_rpm_per_s = 800
-            max_step = int(accel_rpm_per_s * dt_s)
-
-            if not self.enabled or self.brake:
-                target = 0
-            else:
-                throttle_scale = max(0.0, min(self.throttle_percent / 100.0, 1.0))
-                gear_sign = -1 if self.gear == "REVERSE" else 1
-                eco_scale = 0.6 if self.eco_mode else 1.0
-                target = int(self.target_velocity_rpm * throttle_scale * gear_sign * eco_scale)
-
             if self.force_feedback_to_target:
-                self.velocity_actual_rpm = target
+                self.velocity_actual_rpm = self.target_velocity_rpm
             else:
+                accel_rpm_per_s = 800
+                max_step = int(accel_rpm_per_s * dt_s)
+
+                if not self.enabled or self.brake:
+                    target = 0
+                else:
+                    throttle_scale = max(0.0, min(self.throttle_percent / 100.0, 1.0))
+                    gear_sign = -1 if self.gear == "REVERSE" else 1
+                    eco_scale = 0.6 if self.eco_mode else 1.0
+                    target = int(self.target_velocity_rpm * throttle_scale * gear_sign * eco_scale)
+
                 delta = target - self.velocity_actual_rpm
                 if delta > max_step:
                     delta = max_step
